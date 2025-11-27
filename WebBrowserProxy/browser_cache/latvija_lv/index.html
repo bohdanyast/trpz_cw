@@ -1,0 +1,1556 @@
+
+<!DOCTYPE html>
+<html lang="lv" class="default font-size-100">
+<head>
+    <meta charset="utf-8" >
+    <title>S&#x101;kumlapa &#x2013; Valsts p&#x101;rvaldes pakalpojumu port&#x101;ls</title>
+    <link rel="icon" type="image/x-icon" href=/Home/favicon.ico >
+    <link rel="shortcut icon" type="image/x-icon" href=/Home/favicon.ico >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link rel="preconnect" href="https://eservices.viss.gov.lv/EservicePlatform.Assets/v2.4.4/SDK/HTMLSDK" crossorigin >
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href=/Home/_content/Lvp.Portal.Controls.Razor/css/loader.min.css >
+    <link rel="stylesheet" href=/Home/_content/Lvp.Portal.Controls.Razor/css/styles.min.css >
+    
+    <link href="css/site.min.css" rel="stylesheet" type="text/css">
+    <base href=/Home/ >
+
+</head>
+<body>
+
+    
+
+
+
+    
+
+<div class='js--skip-content' data-component='SkipContent' data-option-array-main-blocks-to-navigate='[{
+  "idOfElement": "page-sidebar",
+  "label": "skipContent.sidebar",
+  "wrapperClass": [
+    "d-none",
+    "d-lg-block"
+  ]
+},{
+  "idOfElement": "main-page-content",
+  "label": "Doties uz galevano sadaļu",
+  "wrapperClass": []
+},{
+  "idOfElement": "page-footer",
+  "label": "Doties uz kājeni",
+  "wrapperClass": []
+}]'></div>
+
+    
+
+<div id="main" class="pre-app-loader hidden">
+    <div class="pre-app-loader__inner">
+        <i class="pre-app-loader__icon"></i>
+    </div>
+</div>
+
+    
+<script>
+    var downtimeConfiguration = {
+        interval: 900000,
+        startValue: 45,
+        logoutAction: '/Home/logout',
+        enabled: false
+    };
+</script>
+
+
+
+<dialog class='modal' id='downtimeModal' data-modal-id='downtimeModal' data-component='Modal'   
+    data-option-modal-container-selector='.js--modal-container'
+    data-option-close-button-selector='.js--downtimeModal-closeBtn'
+    data-option-boolean-close-on-backdrop-click='false'
+    data-option-boolean-hidden='true' style='display: none'>
+    <div class='container'>
+        <div class='row'>
+            <div class='mx-auto col-lg-8 col-12'>
+                <div class='modal__container js--modal-container'>
+                    <div class='modal__header'>
+                        <button class='modal__header__close btn btn-no-border js--downtimeModal-closeBtn' type='button' aria-label="Aizv&#x113;rt dialogu un turpin&#x101;t darbu" aria-describedby="downtime-modal-heading">
+                            <i class='ic-close-black'></i>
+                        </button>
+                            <div class='content__header no-border content__header--md'>
+                                <div class='d-flex'>
+                                    <div class='content__header__body'>
+                                        <p class='text-gray'></p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class='modal__body'>
+                        <div class='modal__body__inner'>
+<div>
+        <div class="content__header no-border content__header--lg centered ">
+            <div class="d-flex">
+                <div class="content__header__body">
+                    <p><i class="ic-warn-lg"></i></p>
+                    <p></p>
+                    <h1 id="downtime-modal-heading">Br&#x12B;din&#x101;jums</h1>
+                    <p id=downtimeModal-description class="text-gray mt-2 font-size-15">Uzman&#x12B;bu! Sesija tiks sl&#x113;gta p&#x113;c {0} sekund&#x113;m.</p>
+                </div>
+            </div>
+        </div>
+        <div class="button-group justify-content-center">
+            <button id=downtimeModal-continueBtn class="btn btn-danger btn-rounded btn-wide" type="button">
+                <span tabindex="-1">
+                    <span class=" ">Turpin&#x101;t darbu</span>
+                </span>
+            </button>
+
+            <button id=downtimeModal-finishBtn class="btn btn-default btn-rounded btn-rounded btn-wide" type="button">
+                <span tabindex="-1">
+                    <span class=" ">Beigt darbu</span>
+                </span>
+            </button>
+        </div>
+    </div>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+    
+
+<header class='header' data-component='Header'>
+    
+
+<div class='header__masthead'>
+    <div class='container px-0 h-100'>
+        <div class='row h-100'>
+            <div class='col-lg-8 col-12 d-flex align-items-center masthead-mobile__top'>
+                <div class='d-flex align-items-center w-100 h-100 masthead-mobile__top__controls'>
+                    <div class='header__masthead__logo logo-md'>
+                        
+
+
+<a href='https://latvija.gov.lv/Home/?lang=lv' aria-label="S&#x101;kumlapa">
+    <svg xmlns='http://www.w3.org/2000/svg' width='120' height='41' viewBox='0 0 120 41'>
+        <path fill='#a01b36' d='M64.346 8.16s1.81 1.04 3.36 4.423c1.11 2.422 2.363 8.176.805 13.905-1.494 5.496-3.855 8.896-6.033 11.046-1.781 1.759-4.77 3.023-4.77 3.023s8.752-2.348 12.546-10.19c4.255-8.793 1.962-15.013.957-17.344-2.298-5.33-6.865-4.862-6.865-4.862M55.008 2.306s1.76.519 3.189 1.635c1.198.935 2.155 2.157 2.155 2.157s-2.299 1.375-4.137.385c-2.113-1.137-1.207-4.177-1.207-4.177zM55.996 1.235s1.682.57 3.164 1.646c1.29.938 2.35 2.283 2.35 2.283s2.278-2.366.229-4.194c-2.09-1.862-5.743.265-5.743.265zM62.397 8.405c-.903.251-2.234.88-2.234.88s2.586 2.529 3.16 7.365c.575 4.837-.115 10.058-2.586 14.839-1.662 3.217-3.883 5.584-5.573 6.76-3.16 2.198-6.205 1.1-6.205 1.1s1.026 2.097 4.826 1.538c4.482-.659 8.618-4.177 10.917-8.794 2.3-4.616 3.333-9.287 2.643-14.014-.69-4.726-2.176-6.605-3.518-8.279-.61-.762-1.43-1.395-1.43-1.395'></path>
+        <path fill='#2f2f2f' d='M13.534 26.273H.002V5.82h4.185V22.71h9.347v3.564zM15.52 12.512c.814-.351 1.781-.628 2.901-.833a19.52 19.52 0 0 1 3.513-.307c1.059 0 1.945.122 2.658.365.712.244 1.277.59 1.695 1.038.417.448.713.983.886 1.606.173.624.26 1.325.26 2.104 0 .857-.03 1.72-.092 2.586-.061.867-.097 1.72-.107 2.556-.01.838.015 1.65.076 2.44a8.84 8.84 0 0 0 .458 2.235h-3.237l-.642-2.016h-.153c-.407.604-.972 1.125-1.695 1.563-.723.438-1.655.657-2.795.657-.713 0-1.354-.102-1.924-.307a4.204 4.204 0 0 1-1.467-.876 3.986 3.986 0 0 1-.946-1.344c-.225-.516-.336-1.095-.336-1.738 0-.896.208-1.65.626-2.264.417-.614 1.018-1.11 1.802-1.49.783-.38 1.72-.643 2.81-.79 1.09-.145 2.307-.19 3.65-.13.143-1.092.062-1.875-.244-2.353-.305-.477-.988-.716-2.046-.716-.795 0-1.635.078-2.52.234-.886.156-1.615.36-2.185.614l-.947-2.834zm5.04 10.868c.794 0 1.425-.17 1.894-.511.468-.34.814-.706 1.038-1.096v-1.899a11.447 11.447 0 0 0-1.817-.029c-.58.04-1.095.127-1.543.263-.448.137-.805.331-1.07.584a1.277 1.277 0 0 0-.396.965c0 .545.168.969.504 1.27.336.303.799.453 1.39.453zM29.173 11.664h2.108V8.918l3.97-1.081v3.827h3.727v3.214h-3.726v5.61c0 1.013.107 1.738.32 2.177.214.438.616.657 1.207.657.407 0 .758-.039 1.054-.117.295-.078.626-.195.993-.35l.702 2.921c-.55.253-1.191.468-1.924.643a9.552 9.552 0 0 1-2.23.263c-1.405 0-2.439-.346-3.1-1.037-.662-.692-.993-1.826-.993-3.404v-7.363h-2.108v-3.214zM46.004 19.32l.52 2.249h.152l.428-2.308 2.596-7.597h4.277L47.593 26.42H45.18l-6.63-14.755h4.614l2.84 7.655zM55.657 11.664h3.97v14.609h-3.97V11.664zM74.903 12.512c.814-.351 1.781-.628 2.901-.833a19.528 19.528 0 0 1 3.513-.307c1.06 0 1.945.122 2.658.365.713.244 1.278.59 1.695 1.038.417.448.713.983.886 1.606.173.624.26 1.325.26 2.104 0 .857-.03 1.72-.092 2.586-.06.867-.097 1.72-.107 2.556-.01.838.016 1.65.077 2.44.06.789.213 1.534.458 2.235h-3.238l-.642-2.016h-.152c-.408.604-.973 1.125-1.696 1.563-.723.438-1.655.657-2.795.657-.713 0-1.354-.102-1.924-.307a4.202 4.202 0 0 1-1.466-.876 3.987 3.987 0 0 1-.947-1.344c-.225-.516-.336-1.095-.336-1.738 0-.896.208-1.65.626-2.264.417-.614 1.018-1.11 1.802-1.49.784-.38 1.721-.643 2.81-.79 1.09-.145 2.307-.19 3.65-.13.143-1.092.062-1.875-.243-2.353-.306-.477-.989-.716-2.047-.716-.794 0-1.635.078-2.52.234-.886.156-1.615.36-2.184.614l-.947-2.834zm5.04 10.868c.794 0 1.425-.17 1.894-.511.468-.34.814-.706 1.038-1.096v-1.899a11.448 11.448 0 0 0-1.817-.029c-.58.04-1.095.127-1.543.263-.448.137-.805.331-1.069.584a1.277 1.277 0 0 0-.397.965c0 .545.168.969.504 1.27.336.303.799.453 1.39.453zM89.687 24.344c0-.681.224-1.222.672-1.621.447-.4 1.038-.599 1.771-.599.774 0 1.385.2 1.833.599.448.4.672.94.672 1.621 0 .683-.224 1.228-.672 1.636-.448.41-1.059.614-1.833.614-.733 0-1.324-.204-1.771-.614-.448-.408-.672-.953-.672-1.636M101.752 21.364c0 .682.092 1.179.275 1.49.183.312.479.468.886.468.244 0 .483-.02.718-.059a4.46 4.46 0 0 0 .87-.263l.428 2.98c-.326.157-.825.312-1.497.468a9.172 9.172 0 0 1-2.077.234c-1.161 0-2.047-.259-2.657-.774-.612-.516-.917-1.369-.917-2.557V5.82h3.971v15.543zM111.924 19.32l.519 2.249h.153l.428-2.308 2.596-7.597h4.277l-6.385 14.755h-2.413l-6.629-14.755h4.613l2.84 7.655z'></path>
+    </svg>
+</a>
+
+                    </div>
+                    <div class='header__masthead__controls not-printable'>
+                        <ul>
+                            
+
+
+<li data-component='MastHeadAccessibility'>
+    <div class='text-select js--a11y-size'>
+        <button class='text-decoration-none text-select__sizes js--a11y-size-btn cursor-pointer' aria-label="Teksta izm&#x113;ra mai&#x146;a">
+            <span class='font-size-lg'>A</span>
+            <span class='font-size-md'>A</span>
+            <span class='font-size-sm'>A</span>
+        </button>
+
+        <div class='text-select__dropdown js--a11y-size-dropdown'>
+            <ul aria-label="Teksta izm&#x113;ra mai&#x146;a">
+                    <li tabindex="0" class='font-size-75' data-value='font-size-75' >75%</li>
+                    <li tabindex="0" class='font-size-100' data-value='font-size-100' >100%</li>
+                    <li tabindex="0" class='font-size-125' data-value='font-size-125' >125%</li>
+                    <li tabindex="0" class='font-size-150' data-value='font-size-150' data-is-last=true>150%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='header__masthead__theme-switcher ml-4 js--a11y-color'>
+        <button class='js--a11y-color-btn theme-switcher__button cursor-pointer' aria-label="V&#x101;jredz&#x12B;go re&#x17E;&#x12B;ma mai&#x146;a">
+            <i class='ic-theme'></i>
+        </button>
+
+        <div class='theme-switcher__dropdown js--a11y-color-dropdown'>
+            <ul aria-label='V&#x101;jredz&#x12B;go re&#x17E;&#x12B;ma mai&#x146;a'>
+                    <li class='yellow-on-black' data-value='yellow-on-black' >
+                        <div role='button' tabindex='0' aria-label="Augsta kontrasta dzeltens uz melna" onkeydown="">A</div>
+                    </li>
+                    <li class='black-on-yellow' data-value='black-on-yellow' >
+                        <div role='button' tabindex='0' aria-label="Augsta kontrasta melns uz dzeltena" onkeydown="">A</div>
+                    </li>
+                    <li class='default' data-value='default' data-is-last=true>
+                        <div role='button' tabindex='0' aria-label="Parastais" onkeydown="">A</div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</li>
+                            
+
+<li>
+    <ul>
+            <li>
+                <a class='text-uppercase' href='/Home/language/EN' aria-label="P&#x101;rsl&#x113;gties uz ang&#x13C;u valodu">
+                    EN
+                </a>
+             </li>   
+    </ul>
+</li>
+
+
+                        </ul>
+                    </div>
+
+                    
+
+<button
+    class='btn btn-no-border masthead-mobile__top__controls__search-icon js--mobile-search-btn not-printable'
+    type="button"
+    aria-label="Atv&#x113;rt mekl&#x113;t&#x101;ju"
+    aria-expanded="false"
+>
+    <i class='ic-search'></i>
+</button>
+
+<div class='header__masthead__search not-printable js--search-form'
+    data-component="Search"
+    data-search-url='https://latvija.gov.lv/Search/?sp={searchPhrase}'
+    data-loader-aria-text="Tiek mekl&#x113;ti rezult&#x101;ti"
+    data-search-query-cleared-aria-text="Mekl&#x113;&#x161;anas vaic&#x101;jums not&#x12B;r&#x12B;ts. Mekl&#x113;&#x161;anas rezult&#x101;tu dialogs aizv&#x113;rts."
+    data-no-results-found-text="Rezult&#x101;ti netika atrasti"
+    role="search"
+>
+    <button class="btn btn-border-black btn-border btn-close-search js--close-search-btn">
+        <span tabindex="-1">
+            <span>Aizv&#x113;rt mekl&#x113;t&#x101;ju</span>
+        </span>
+    </button>
+    <div class='form-group form-with-addon addon-append form-lg bg-gray no-border-radius'>
+        <div class='d-flex w-100'>
+            <div class='input-wrapper'>
+                <input aria-describedby="search-descriptive-text" autocomplete="off" id='search-field' type='search' placeholder='Mekl&#x113;t port&#x101;l&#x101;...' maxLength=99 class='form-control js--search-input' role='combobox' aria-expanded='false' aria-label="Mekl&#x113;&#x161;anas ievadlauks" aria-controls='_dbb41b0a-58ea-4ae0-9915-8449b636c50a'>
+                <p id="search-descriptive-text" class="sr-only-visible">Lai uzs&#x101;ktu mekl&#x113;&#x161;anu j&#x101;ievada vismaz tr&#x12B;s simboli</p>
+            </div>
+            <button class='btn btn-no-border search__clear hidden js--search-clear' aria-label='Not&#x12B;r&#x12B;t vaic&#x101;jumu'>
+                <i class='ic-close-black'></i>
+            </button>
+            <div class="addon-append">
+                <button class="btn btn-no-border js--search-btn" type="button" aria-label="Mekl&#x113;t rezult&#x101;tus">
+                    <i class="ic-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class='form-group__tooltip hidden'>
+            <i class='ic-question-black'></i>
+        </div>
+    </div>
+    <div id='_dbb41b0a-58ea-4ae0-9915-8449b636c50a' aria-live='polite' class='results-wrapper'>
+        <div class='search__expand hidden js--popular-results'>
+                <h6 id="_e6910cad-2035-4f15-a132-8469b88cd46c" class='text-uppercase font-weight-medium heading-row color-gray-400'>
+                    Top mekl&#x113;t&#x101;kie pakalpojumi
+                </h6>
+            <div class='row' style='margin-top:27px; word-wrap: break-word; word-break: break-word'>
+                    <div class='col-12 col-lg-6'>
+                        
+
+
+    
+
+
+<ul class='list list-simple' aria-labelledby="_e6910cad-2035-4f15-a132-8469b88cd46c">
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/3882'>
+                        <h6>Sa&#x146;emt&#x101;s Darbnesp&#x113;jas lapas</h6>
+                        <p></p>
+                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/47675'>
+                        <h6>Mani administrat&#x12B;v&#x101; p&#x101;rk&#x101;puma procesi un naudas sodu samaksa</h6>
+                        <p></p>
+                </a>
+        </li>
+</ul>
+
+
+
+
+                    </div>
+                    <div class='col-12 col-lg-6'>
+                        
+
+
+    
+
+
+<ul class='list list-simple' aria-labelledby="_e6910cad-2035-4f15-a132-8469b88cd46c">
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45779'>
+                        <h6>Parakstu v&#x101;k&#x161;ana par tautas nobalso&#x161;anas un pa&#x161;vald&#x12B;bu referenduma ierosin&#x101;&#x161;anu</h6>
+                        <p></p>
+                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/32180'>
+                        <h6>Nekustam&#x101; &#x12B;pa&#x161;uma nodok&#x13C;a apmaksa tie&#x161;saist&#x113; (visa Latvija)</h6>
+                        <p></p>
+                </a>
+        </li>
+</ul>
+
+
+
+
+                    </div>
+            </div>
+        </div>
+        <div class='search__expand search__expand--results hidden js--search-results'>
+            <div class="row">
+                <div class="col-12">
+                    <ul class='list list-simple js--search-result-list' style='word-wrap: break-word; word-break: break-word'>
+                    </ul>
+                </div>
+                <div class="search__expand__button js--search-result-list--button">
+                    <button class="btn btn-no-border px-0 btn-bold" data-for="button-5">
+                        <span tabindex="-1">
+                            <i class="ic-go"></i>
+                            <span>Visi rezult&#x101;ti</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-border-black btn-border btn-close-search bottom-button js--close-search-btn">
+        <span tabindex="-1">
+            <span>Aizv&#x113;rt mekl&#x113;t&#x101;ju</span>
+        </span>
+    </button>
+</div>
+
+<div class='header__masthead__burger js--mobile-burger-btn not-printable' tabindex="0" aria-label="Atv&#x113;rt papildus navig&#x101;ciju" role="button" aria-expanded="false" onkeydown="">
+    <i class='ic-burger'></i>
+</div>
+                </div>
+            </div>
+            <div class='col-lg-4 col-12 h-100 masthead-mobile__bottom js--masthead-login'>
+                <div class='header__masthead__login d-flex align-items-center h-100'>
+                    
+
+
+	
+
+
+        <a href="/Home/login"  class='btn    btn-no-border  ' >
+            <span tabindex='-1'>
+                    <i class='ic-profile'></i>
+                <span>
+                    Ien&#x101;kt Mana Latvija.lv
+                </span>
+            </span>
+        </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<div class='header__nav not-printable'>
+    <div class='container h-100 px-0'>
+        <div class='navbar' data-component='Navbar' role='navigation' aria-label="Galven&#x101; navig&#x101;cija">
+            <ul>
+                
+
+
+<li class='is-icon '>
+        <div class='item-body'>
+            <a href='https://latvija.gov.lv/Home/?lang=lv' aria-label="S&#x101;kumlapa">
+                <span>
+                    <span class='d-none d-lg-inline-block'>
+                        <i class='ic-home'></i>
+                    </span>
+                    <span class='d-block d-lg-none'>
+                        S&#x101;kums
+                    </span>
+                </span>
+            </a>
+        </div>
+</li>
+
+                    
+
+
+<li class='expand '>
+        <div class='item-body js--navbar-expand-button' role='button' tabindex='0' aria-expanded='false' onkeydown="">
+            <div class='mock-link'>Pakalpojumi</div>
+            <div class='item-click-mask js--click-mask'>
+                <i class='ic-arrow'></i>
+            </div>
+        </div>
+        <div class='navbar__expand'>
+            <div class='navbar__expand__inner'>
+                <div class='container h-100'>
+                    <div class='navbar__expand__inner__rows'>
+                        <div class='px-0 flex-lg-row row lg-mx--20'>
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/Services/?isEservice=true'>
+                        <h2 class='text-orange'>Popul&#x101;rie pakalpojumi</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/12209'>
+Dz&#x12B;vesvietas deklar&#x113;&#x161;ana vai nor&#x101;d&#x12B;&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/6900'>
+Pieteik&#x161;an&#x101;s uzturl&#x12B;dzek&#x13C;u sa&#x146;em&#x161;anai                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Pensijas manto&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/47675'>
+Administrat&#x12B;vo sodu p&#x101;rbaude un nomaksa                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45779'>
+Parakstu v&#x101;k&#x161;ana par pa&#x161;vald&#x12B;bas referendumu ierosin&#x101;&#x161;anu                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <h2 class='text-orange'>
+                        &#x200D;
+                    </h2>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Iesniegums slim&#x12B;bas pabalsta pie&#x161;&#x137;ir&#x161;anai (B lapa)                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Iesniegums bezdarbnieka pabalsta pie&#x161;&#x137;ir&#x161;anai                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+B&#x113;rna piedzim&#x161;anas pabalsts                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Maternit&#x101;tes (m&#x101;mi&#x146;as) pabalsts                 </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Paternit&#x101;tes (t&#x113;va) pabalsts                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <h2 class='text-orange'>
+                        &#x200D;
+                    </h2>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45702'>
+Inform&#x101;cija par prognoz&#x113;to pensiju                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Pensijas p&#x101;rvald&#x12B;t&#x101;ja izv&#x113;le (2.l&#x12B;menis)                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Iesniegums vecuma pensijas p&#x101;rr&#x113;&#x137;in&#x101;&#x161;anai sakar&#x101; ar uzkr&#x101;to pensijas kapit&#x101;lu                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/45707'>
+Apbed&#x12B;&#x161;anas pabalsts                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Services/32180'>
+Nekustam&#x101; &#x12B;pa&#x161;uma nodok&#x13C;a nomaksa                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                    <div class='navbar__expand__button'>
+                        <div class='container px-0'>
+                            
+
+
+        <a href="https://latvija.gov.lv/Services/"  class='btn btn-bold   btn-no-border  ' >
+            <span tabindex='-1'>
+                    <i class='ic-go'></i>
+                <span>
+                    Apskat&#x12B;t visus pakalpojumus
+                </span>
+            </span>
+        </a>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+</li>
+
+                    
+
+
+<li class='expand '>
+        <div class='item-body js--navbar-expand-button' role='button' tabindex='0' aria-expanded='false' onkeydown="">
+            <div class='mock-link'>Ko dar&#x12B;t, ja...?</div>
+            <div class='item-click-mask js--click-mask'>
+                <i class='ic-arrow'></i>
+            </div>
+        </div>
+        <div class='navbar__expand'>
+            <div class='navbar__expand__inner'>
+                <div class='container h-100'>
+                    <div class='navbar__expand__inner__rows'>
+                        <div class='px-0 flex-lg-row row lg-mx--20'>
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/LifeSituations/'>
+                        <h2 class='text-orange'>Bie&#x17E;&#x101;k lietot&#x101;s dz&#x12B;ves situ&#x101;cijas</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22291'>
+Bezdarbnieku pabalsts un darba mekl&#x113;&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/23741'>
+Darbs, nodok&#x13C;i un algas nodok&#x13C;u gr&#x101;mati&#x146;a                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/25038'>
+Dz&#x12B;vesvietas deklar&#x113;&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22313'>
+Pensijas vecums un uzkr&#x101;jums                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/23673'>
+Gada ien&#x101;kumu deklar&#x101;cija                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <h2 class='text-orange'>
+                        &#x200D;
+                    </h2>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22503'>
+B&#x113;rna gaid&#x12B;&#x161;ana un piedzim&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22575'>
+Laul&#x12B;bas nosl&#x113;g&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/24811'>
+Vesel&#x12B;ba darbaviet&#x101;                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/25626'>
+Priv&#x101;tm&#x101;jas b&#x16B;vniec&#x12B;ba                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/23773'>
+Slim&#x12B;bas lapas un r&#x12B;c&#x12B;ba saslim&#x161;anas gad&#x12B;jum&#x101;                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <h2 class='text-orange'>
+                        &#x200D;
+                    </h2>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22555'>
+B&#x113;rna uzturl&#x12B;dzek&#x13C;u sa&#x146;em&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/25499'>
+Nekustam&#x101; &#x12B;pa&#x161;uma pirk&#x161;ana un p&#x101;rdo&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22330'>
+Invalidit&#x101;tes apliec&#x12B;ba un pabalsts                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/25876'>
+Dabas un vides aizsardz&#x12B;ba                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/LifeSituations/22987'>
+Laul&#x12B;bas re&#x123;istr&#x101;cija un &#x161;&#x137;ir&#x161;ana                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                    <div class='navbar__expand__button'>
+                        <div class='container px-0'>
+                            
+
+
+        <a href="https://latvija.gov.lv/LifeSituations/"  class='btn btn-bold   btn-no-border  ' >
+            <span tabindex='-1'>
+                    <i class='ic-go'></i>
+                <span>
+                    Apskat&#x12B;t visas dz&#x12B;ves situ&#x101;cijas
+                </span>
+            </span>
+        </a>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+</li>
+
+                    
+
+
+<li class='expand '>
+        <div class='item-body js--navbar-expand-button' role='button' tabindex='0' aria-expanded='false' onkeydown="">
+            <div class='mock-link'>Mana Latvija.lv</div>
+            <div class='item-click-mask js--click-mask'>
+                <i class='ic-arrow'></i>
+            </div>
+        </div>
+        <div class='navbar__expand'>
+            <div class='navbar__expand__inner'>
+                <div class='container h-100'>
+                    <div class='navbar__expand__inner__rows'>
+                        <div class='px-0 flex-lg-row row lg-mx--20'>
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/KDV/Tiles/'>
+                        <h2 class='text-orange'>Mana Latvija.lv</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/Tiles/'>
+Mana Latvija.lv                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/StateDataHub/'>
+Mani dati                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/UserActivities/'>
+Veikto darb&#x12B;bu v&#x113;sture                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/KDV/Mailbox/'>
+                        <h2 class='text-orange'>Sazi&#x146;a un E-adrese</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/Mailbox/'>
+Mana pastkast&#x12B;te                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/EadreseReg/'>
+Piesl&#x113;gt e-adresi                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Eadrese'>
+Inform&#x101;cija par e-adresi                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/KDV/Profile/'>
+                        <h2 class='text-orange'>Iestat&#x12B;jumi</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/Profile/'>
+Profila iestat&#x12B;jumi                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/Delegation/?lang=lv'>
+Pilnvarojumi                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/Profile/Eaddress/'>
+E-adreses iestat&#x12B;jumi                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                    <div class='navbar__expand__button'>
+                        <div class='container px-0'>
+                            
+
+
+        <a href="https://latvija.gov.lv/Home/login"  class='btn btn-bold   btn-no-border  ' >
+            <span tabindex='-1'>
+                    <i class='ic-go'></i>
+                <span>
+                    Ien&#x101;kt Mana Latvija.lv
+                </span>
+            </span>
+        </a>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+</li>
+
+                    
+
+
+<li class='expand '>
+        <div class='item-body js--navbar-expand-button' role='button' tabindex='0' aria-expanded='false' onkeydown="">
+            <div class='mock-link'>E-adrese</div>
+            <div class='item-click-mask js--click-mask'>
+                <i class='ic-arrow'></i>
+            </div>
+        </div>
+        <div class='navbar__expand'>
+            <div class='navbar__expand__inner'>
+                <div class='container h-100'>
+                    <div class='navbar__expand__inner__rows'>
+                        <div class='px-0 flex-lg-row row lg-mx--20'>
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/KDV/Mailbox/'>
+                        <h2 class='text-orange'>E-adrese</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/Mailbox/'>
+E-adreses pastkast&#x12B;te                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/KDV/EadreseReg/'>
+Piesl&#x113;gt e-adresi                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <h2 class='text-orange'>
+                        Par e-adresi
+                    </h2>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Eadreses_noteikumi'>
+E-adreses lieto&#x161;anas noteikumi                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Eadrese'>
+Inform&#x101;cija par e-adresi                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</li>
+
+                    
+
+
+<li class='expand '>
+        <div class='item-body js--navbar-expand-button' role='button' tabindex='0' aria-expanded='false' onkeydown="">
+            <div class='mock-link'>Par port&#x101;lu</div>
+            <div class='item-click-mask js--click-mask'>
+                <i class='ic-arrow'></i>
+            </div>
+        </div>
+        <div class='navbar__expand'>
+            <div class='navbar__expand__inner'>
+                <div class='container h-100'>
+                    <div class='navbar__expand__inner__rows'>
+                        <div class='px-0 flex-lg-row row lg-mx--20'>
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/Content/Kontakti'>
+                        <h2 class='text-orange'>Noder&#x12B;gi</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Kontakti'>
+Kontakti un sazi&#x146;a                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Aktuali'>
+Aktualit&#x101;tes                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Statistika'>
+Statistika                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Par_epastu'>
+E-pasta apstiprin&#x101;&#x161;ana                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://forms.office.com/e/Xb3ZwQ4WUY'>
+Atsauksme par Latvija.gov.lv                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Promo/'>
+Latvija.gov.lv mobil&#x101; lietotne                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/Content/Sikdatnes'>
+                        <h2 class='text-orange'>Priv&#x101;tuma politika</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Sikdatnes'>
+S&#x12B;kdat&#x146;u politika                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Personas_datu_apstrade'>
+Personas datu apstr&#x101;des principi                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                                
+
+
+    <div class='col-lg-4 col-12 pl-0 lg-mx-20'>
+        
+
+
+<ul class='list list-simple'>
+        <li class='list__item list__item--header'>
+                    <a class='d-flex flex-row align-items-center' href='https://latvija.gov.lv/Content/Portala_noteikumi'>
+                        <h2 class='text-orange'>Lieto&#x161;anas noteikumi</h2>
+                    </a>
+        </li>
+
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/pilnvarosanas_noteikumi'>
+Pilnvaro&#x161;anas risin&#x101;juma lieto&#x161;anas noteikumi                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Portala_noteikumi'>
+Port&#x101;la lieto&#x161;anas noteikumi                </a>
+        </li>
+        <li class='list__item list__item--link'>
+                <a href='https://latvija.gov.lv/Content/Mani_dati_noteikumi'>
+Pakalpojuma &quot;Mani dati&quot; lieto&#x161;anas noteikumi                </a>
+        </li>
+</ul>
+
+
+    </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+	<div class='alert not-printable alert-dark   js--closed-by-default'
+		data-component='Alert'
+		data-option-should-stay-hidden="true"
+		data-option-close-button-selector='.alert__controls__close'>
+		<div class='container d-flex px-0 align-items-center'>
+			<div class='alert__text'>
+					<div class='alert__text__icon'>
+						<i class='ic-warn-round'></i>
+					</div>
+				<p id="_9e00a718-625d-4d68-8343-e1862e2124fd">Lūdzam sniegt atsauksmi par portāla darbību. <a href='https://forms.office.com/e/Xb3ZwQ4WUY' target='_blank' style='color:#E67B51;text-decoration: underline;text-underline-offset: 0.25em;' aria-label='Atvērsies jauna cilnē: anketas saite par portāla darbību'>Aizpildīt atsauksmju anketu <i class='ic-new-tab sm' style='vertical-align: middle'></i></a><script>window.addEventListener('load', function() {const i = document.querySelector('ul li i.ic-logout');if (i) {const j = document.querySelector('ul li.user-card__info i.ic-check');const ul = i?.closest('ul');const ul2 = j?.closest('ul');const lastLi = ul.lastElementChild;if (lastLi) {ul2.insertBefore(lastLi, ul2.firstElementChild);}}document.querySelector('header > .alert.alert-dark:not(.hidden)')?.classList.add('hidden');const j = document.querySelector('#main-page-content > div > section.welcome-section > p');const k = document.querySelector('body > header > div.header__masthead > div > div > div.col-lg-4.col-12.h-100.masthead-mobile__bottom.js--masthead-login > div > div > button > span > div.user-card__info.align-items-start > span');var k2;if (k) {k2 = k.innerText;}if (j && k2.includes('Fiziska')) {j.innerHTML += " <style>.tooltip-container {position: relative;display: inline-block;}.tooltip-trigger {background: none;border: none;cursor: pointer;padding: 0;font: inherit;}.tooltip-text {visibility: hidden;opacity: 0;min-width: 260px;max-width: 480px;background-color: white;color: black;text-align: left;border: 1px solid #ccc;border-radius: 4px;padding: 10px;position: absolute;bottom: 125%;left: 50%;transform: translateX(-50%);box-shadow: 0 2px 8px rgba(0,0,0,0.15);z-index: 11111;font-size: 1rem;font-weight: 100;transition: opacity 0.2s ease-in-out;}.tooltip-text::after {content: '';position: absolute;top: 100%;left: 50%;margin-left: -6px;border-width: 6px;border-style: solid;border-color: white transparent transparent transparent;}.tooltip-container:focus-within .tooltip-text,.tooltip-container:hover .tooltip-text {visibility: visible;opacity: 1;}</style><span class='tooltip-container'><button class='tooltip-trigger' aria-describedby='tooltip1'><i class='ic-question-black' aria-hidden='true'></i></button><span class='tooltip-text' id='tooltip1' role='tooltip'>Ja portālā redzamais uzvārds neatbilst aktuālajam, iespējams, Smart-ID vēl nav atjaunināts. Lūdzam pārbaudīt un nepieciešamības gadījumā to atjaunināt. Pēc tam autentificējieties portālā vēlreiz.</span></span>";}});</script></p>
+			</div>
+				<div class='alert__controls'>
+					<button aria-describedby="_9e00a718-625d-4d68-8343-e1862e2124fd" class="alert__controls__close" type="button" aria-label="Aizv&#x113;rt pazi&#x146;ojumu">
+						<i class="ic-close"></i>
+					</button>
+				</div>
+		</div>
+	</div>
+	<div class='alert not-printable alert-dark   js--closed-by-default'
+		data-component='Alert'
+		data-option-should-stay-hidden="true"
+		data-option-close-button-selector='.alert__controls__close'>
+		<div class='container d-flex px-0 align-items-center'>
+			<div class='alert__text'>
+					<div class='alert__text__icon'>
+						<i class='ic-warn-round'></i>
+					</div>
+				<p id="_0832652b-00e9-4f48-b3f1-cdbd90f904fa">Sakarā ar plānotajiem tehniskajiem darbiem no 25.11.2025. līdz 28.11.2025. iespējami īslaicīgi traucējumi e-pasta paziņojumu nosūtīšanā.</p>
+			</div>
+				<div class='alert__controls'>
+					<button aria-describedby="_0832652b-00e9-4f48-b3f1-cdbd90f904fa" class="alert__controls__close" type="button" aria-label="Aizv&#x113;rt pazi&#x146;ojumu">
+						<i class="ic-close"></i>
+					</button>
+				</div>
+		</div>
+	</div>
+
+
+</header>
+
+
+
+    <div class="wrapper" role="main" id="main-page-content">
+        
+
+
+
+
+
+
+<div class="main-page">
+    <div class="container px-0">
+        <div class="main-page__header">
+            <h1 class="font-family-heading">Valsts p&#x101;rvaldes pakalpojumu port&#x101;ls</h1>
+        </div>
+    </div>
+    <div class='rounded-block'>
+        <div class='container rounded-block--container'>
+            <div class='row'>
+                <div class='flex-column col-12'>
+                    <div style='margin: 0px -15px'>                        
+                        
+
+<style type="text/css">
+    .cards .col-lg-4 {
+        padding-bottom: 15px !important; 
+        padding-top: 15px !important;
+    }
+
+    @media (max-width: 992px) {
+        .cards .col-lg-4 {
+            padding-bottom: 0px !important; 
+            padding-top: 0px !important;
+        }
+    }
+</style>
+
+<div class='cards' style='position: relative !important'>
+    <div class='row'>
+            <div class='col-lg-4 col-12'>
+            <div class='card-b' data-component="Cards" data-option-card-item-selector='.card-b-click-mask' data-option-card-item-body='.card-b__body'>
+                <div class='card-b-click-mask' tabindex="0" aria-expanded="false" role="button" onkeydown=""></div>
+                <div class='card-b__head'>
+                    <div class='card-b__head__icon'>
+                        <i class='ic-e-sign-orange'></i>
+                    </div>
+                        <h2>Visi pakalpojumi</h2>
+                </div>
+                <div class='card-b__body'>
+                    <ul class='list list-simple'>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/Services/45686'>
+                                <span>VSAA inform&#x101;cija un pakalpojumi</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/Services/12209'>
+                                <span>Dz&#x12B;vesvietas deklar&#x113;&#x161;ana vai nor&#x101;d&#x12B;&#x161;ana</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/Services/45707'>
+                                <span>Slim&#x12B;bas pabalsta pie&#x161;&#x137;ir&#x161;ana (B lapa)</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/Services/32180'>
+                                <span>Nekustam&#x101; &#x12B;pa&#x161;uma nodok&#x13C;a apmaksa tie&#x161;saist&#x113;</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                    </ul>
+                        <a class='btn btn-border btn-border-orange btn-bold btn-rounded btn-sm' href='https://latvija.gov.lv/Services/' target='_self'>
+                            <span tabindex='-1'>
+                                <span>Visi pakalpojumi</span>
+                                </span>
+                        </a>
+                </div>
+            </div>
+        </div>
+            <div class='col-lg-4 col-12'>
+            <div class='card-b' data-component="Cards" data-option-card-item-selector='.card-b-click-mask' data-option-card-item-body='.card-b__body'>
+                <div class='card-b-click-mask' tabindex="0" aria-expanded="false" role="button" aria-label="Noder&#x12B;gas saites" onkeydown=""></div>
+                <div class='card-b__head'>
+                    <div class='card-b__head__icon'>
+                        <i class='ic-light'></i>
+                    </div>
+                        <h2>Ko dar&#x12B;t, ja...?</h2>
+                </div>
+                <div class='card-b__body'>
+                    <ul class='list list-simple'>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/LifeSituations/22291'>
+                                <span>Bezdarbnieku pabalsts un darba mekl&#x113;&#x161;ana</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/LifeSituations/23673'>
+                                <span>Gada ien&#x101;kumu deklar&#x101;cija</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/LifeSituations/22503'>
+                                <span>B&#x113;rna gaid&#x12B;&#x161;ana un piedzim&#x161;ana</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/LifeSituations/23773'>
+                                <span>R&#x12B;c&#x12B;ba saslim&#x161;anas gad&#x12B;jum&#x101;</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                    </ul>
+                        <a class='btn btn-border btn-border-orange btn-bold btn-rounded btn-sm' href='https://latvija.gov.lv/LifeSituations/' target='_self'>
+                            <span tabindex='-1'>
+                                <span>Visas dz&#x12B;ves situ&#x101;cijas</span>
+                                </span>
+                        </a>
+                </div>
+            </div>
+        </div>
+            <div class='col-lg-4 col-12'>
+            <div class='card-b' data-component="Cards" data-option-card-item-selector='.card-b-click-mask' data-option-card-item-body='.card-b__body'>
+                <div class='card-b-click-mask' tabindex="0" aria-expanded="false" role="button" aria-label="Mana Latvija saites" onkeydown=""></div>
+                <div class='card-b__head'>
+                    <div class='card-b__head__icon'>
+                        <i class='ic-user'></i>
+                    </div>
+                        <h2>Mana Latvija.lv</h2>
+                </div>
+                <div class='card-b__body'>
+                    <ul class='list list-simple'>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/KDV/Mailbox/'>
+                                <span>E-adreses pastkast&#x12B;te</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/KDV/EadreseReg/'>
+                                <span>S&#x101;kt lietot e-adresi</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/KDV/UserActivities/'>
+                                <span>Manas darb&#x12B;bas port&#x101;l&#x101;</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                        <li class='list__item list__item--link'>
+                            <a class='d-flex flex-row' href='https://latvija.gov.lv/KDV/Profile/'>
+                                <span>Profila iestat&#x12B;jumi</span>
+                                <i class='ic-arrow-long'></i>
+                            </a>
+                        </li>
+                    </ul>
+                        <a class='btn btn-border btn-border-orange btn-bold btn-rounded btn-sm' href='https://latvija.gov.lv/KDV/Write/NewMessage?lang=lv' target='_self'>
+                            <span tabindex='-1'>
+                                <span>Rakst&#x12B;t e-adres&#x113;</span>
+                                </span>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                        <div class="m-mt-4" style="z-index: 1; position: relative;">
+                            
+                        </div>                       
+                        <div class="landing-banner">
+                            
+
+        <section class="custom-carousel" data-component="Carousel" data-option-array-slides='[{&#xA;  &quot;target&quot;: &quot;_self&quot;,&#xA;  &quot;link&quot;: &quot;https://latvija.gov.lv/Content/E_forma&quot;,&#xA;  &quot;image&quot;: &quot;https://cdn.viss.gov.lv/LVP3/images/banner/E-formas_notext_v3_1.avif&quot;,&#xA;  &quot;imageAlt&quot;: &quot;Banera att&#x113;ls. Ilustr&#x101;cija ar viedt&#x101;lruni, kur&#x101; redzams saraksts ar ikon&#x101;m &#x2013; aploksne, t&#x113;rz&#x113;&#x161;anas burbulis un atz&#x12B;mes simbols &#x2013; uz gai&#x161;i pel&#x113;ka fona&quot;,&#xA;  &quot;imageSize&quot;: &quot;cover&quot;,&#xA;  &quot;content&quot;: {&#xA;    &quot;title&quot;: &quot;E-formu izmai&#x146;as&quot;,&#xA;    &quot;description&quot;: &quot;port&#x101;l&#x101; Latvija.gov.lv&quot;,&#xA;    &quot;titleSize&quot;: &quot;2.2rem&quot;,&#xA;    &quot;descriptionSize&quot;: &quot;1.5rem&quot;,&#xA;    &quot;textBackground&quot;: &quot;rgba(255, 255, 255, 0.90)&quot;,&#xA;    &quot;background&quot;: null,&#xA;    &quot;color&quot;: &quot;#000000&quot;,&#xA;    &quot;theme&quot;: &quot;dark&quot;,&#xA;    &quot;alignment&quot;: &quot;middle-left&quot;,&#xA;    &quot;titleWidth&quot;: &quot;55%&quot;,&#xA;    &quot;descriptionWidth&quot;: &quot;55%&quot;&#xA;  }&#xA;},{&#xA;  &quot;target&quot;: &quot;_blank&quot;,&#xA;  &quot;link&quot;: &quot;https://www.youtube.com/watch?v=6exLACffK9Q&quot;,&#xA;  &quot;image&quot;: &quot;https://cdn.viss.gov.lv/LVP3/images/banner/e_mail_confirm_v1.avif&quot;,&#xA;  &quot;imageAlt&quot;: &quot;Banera att&#x113;ls. Ilustr&#x101;cija ar personu blakus aploksnes ikonai ar atz&#x12B;mi, simboliz&#x113;jot veiksm&#x12B;gi nos&#x16B;t&#x12B;tu vai sa&#x146;emtu e-pastu&quot;,&#xA;  &quot;imageSize&quot;: &quot;cover&quot;,&#xA;  &quot;content&quot;: {&#xA;    &quot;title&quot;: &quot;E-pasta apstiprin&#x101;&#x161;ana Latvija.gov.lv&quot;,&#xA;    &quot;description&quot;: &quot;Skaties video pam&#x101;c&#x12B;bu&quot;,&#xA;    &quot;titleSize&quot;: &quot;1.5rem&quot;,&#xA;    &quot;descriptionSize&quot;: &quot;1.3rem&quot;,&#xA;    &quot;textBackground&quot;: &quot;rgba(255, 255, 255, 0.90)&quot;,&#xA;    &quot;background&quot;: null,&#xA;    &quot;color&quot;: &quot;#000000&quot;,&#xA;    &quot;theme&quot;: &quot;dark&quot;,&#xA;    &quot;alignment&quot;: &quot;middle-left&quot;,&#xA;    &quot;titleWidth&quot;: &quot;60%&quot;,&#xA;    &quot;descriptionWidth&quot;: &quot;45%&quot;&#xA;  }&#xA;},{&#xA;  &quot;target&quot;: &quot;_self&quot;,&#xA;  &quot;link&quot;: &quot;https://latvija.gov.lv/Content/Erekini&quot;,&#xA;  &quot;image&quot;: &quot;https://cdn.viss.gov.lv/LVP3/images/banner/e-invoice_blank.avif&quot;,&#xA;  &quot;imageAlt&quot;: &quot;Banera att&#x113;ls. Ilustrat&#x12B;vs att&#x113;ls: oran&#x17E;as ikonas, kas att&#x113;lo dokumentu ar uzrakstu XML, eiro val&#x16B;tas simbolu un e-pasta simbolu uz gai&#x161;i pel&#x113;ka fona&quot;,&#xA;  &quot;imageSize&quot;: &quot;cover&quot;,&#xA;  &quot;content&quot;: {&#xA;    &quot;title&quot;: &quot;E-r&#x113;&#x137;ina&quot;,&#xA;    &quot;description&quot;: &quot;sagatavo&#x161;ana un nos&#x16B;t&#x12B;&#x161;ana e-adres&#x113;&quot;,&#xA;    &quot;titleSize&quot;: &quot;2.4rem&quot;,&#xA;    &quot;descriptionSize&quot;: &quot;1.2rem&quot;,&#xA;    &quot;textBackground&quot;: &quot;rgba(255, 255, 255, 0.90)&quot;,&#xA;    &quot;background&quot;: null,&#xA;    &quot;color&quot;: &quot;#000000&quot;,&#xA;    &quot;theme&quot;: &quot;dark&quot;,&#xA;    &quot;alignment&quot;: &quot;middle-left&quot;,&#xA;    &quot;titleWidth&quot;: &quot;80%&quot;,&#xA;    &quot;descriptionWidth&quot;: &quot;35%&quot;&#xA;  }&#xA;},{&#xA;  &quot;target&quot;: &quot;_self&quot;,&#xA;  &quot;link&quot;: &quot;https://latvija.gov.lv/Content/Aktuali&quot;,&#xA;  &quot;image&quot;: &quot;https://cdn.viss.gov.lv/LVP3/images/banner/service_1_360_225.png&quot;,&#xA;  &quot;imageAlt&quot;: &quot;Baneris ar tekstu &#x27;TEHNISKIE DARBI UN AKTUALIT&#x100;TES, esi inform&#x113;ts&#x27;, papildin&#x101;ts ar att&#x113;lu, kur&#x101; attelota oran&#x17E;a m&#x101;ko&#x146;a ikona ar uzgrie&#x17E;&#x146;u atsl&#x113;gu, z&#x12B;muli un sh&#x113;mas l&#x12B;nij&#x101;m&quot;,&#xA;  &quot;imageSize&quot;: &quot;cover&quot;,&#xA;  &quot;content&quot;: {&#xA;    &quot;title&quot;: &quot;TEHNISKIE DARBI UN AKTUALIT&#x100;TES&quot;,&#xA;    &quot;description&quot;: &quot;Esi inform&#x113;ts!&quot;,&#xA;    &quot;titleSize&quot;: &quot;1.4rem&quot;,&#xA;    &quot;descriptionSize&quot;: &quot;1.3rem&quot;,&#xA;    &quot;textBackground&quot;: &quot;rgba(255, 255, 255, 0.90)&quot;,&#xA;    &quot;background&quot;: null,&#xA;    &quot;color&quot;: &quot;#000000&quot;,&#xA;    &quot;theme&quot;: &quot;dark&quot;,&#xA;    &quot;alignment&quot;: &quot;middle-left&quot;,&#xA;    &quot;titleWidth&quot;: &quot;50%&quot;,&#xA;    &quot;descriptionWidth&quot;: &quot;70%&quot;&#xA;  }&#xA;},{&#xA;  &quot;target&quot;: &quot;_blank&quot;,&#xA;  &quot;link&quot;: &quot;https://latvija.gov.lv/Content/Promo&quot;,&#xA;  &quot;image&quot;: &quot;https://cdn.viss.gov.lv/LVP3/images/banner/banner_mob_appv1.png&quot;,&#xA;  &quot;imageAlt&quot;: &quot;Baneris ar ilustrat&#x12B;vo Latvija.gov.lv lietotni&quot;,&#xA;  &quot;imageSize&quot;: &quot;cover&quot;,&#xA;  &quot;content&quot;: {&#xA;    &quot;title&quot;: &quot;Latvija.gov.lv lietotne&quot;,&#xA;    &quot;description&quot;: &quot;Piedalies prototipa test&#x113;&#x161;an&#x101; un izsaki savu viedokli!&quot;,&#xA;    &quot;titleSize&quot;: &quot;1.4rem&quot;,&#xA;    &quot;descriptionSize&quot;: &quot;1.3rem&quot;,&#xA;    &quot;textBackground&quot;: &quot;rgba(255, 255, 255, 0.90)&quot;,&#xA;    &quot;background&quot;: null,&#xA;    &quot;color&quot;: &quot;#000000&quot;,&#xA;    &quot;theme&quot;: &quot;dark&quot;,&#xA;    &quot;alignment&quot;: &quot;middle-left&quot;,&#xA;    &quot;titleWidth&quot;: &quot;50%&quot;,&#xA;    &quot;descriptionWidth&quot;: &quot;70%&quot;&#xA;  }&#xA;}]' data-option-page-separator="No">
+                <div class="custom-carousel__header">
+                        <h2 id="_b1cd1522-d49e-4ec3-8d17-457719c341cf">Piev&#x113;rs uzman&#x12B;bu!</h2>
+
+                        <p>Aktualit&#x101;tes, da&#x17E;&#x101;das kampa&#x146;as un citi jaunumi, ko iesak&#x101;m apl&#x16B;kot</p>
+                </div>
+            <section class="custom-carousel__inner" aria-roledescription="carousel" aria-labelledby="_b1cd1522-d49e-4ec3-8d17-457719c341cf">
+                <div class="custom-carousel__inner__items js--carousel-items" aria-live="polite"></div>
+                <div class="custom-carousel__inner__navigation js--carousel-footer">
+                    <button class="btn btn-border-black btn-border custom-carousel__inner__navigation__prev js--previous-slide-btn" aria-label="Doties uz iepriek&#x161;&#x113;jo slaidu">
+                        <span>
+                            <i class="ic-arrow"></i>
+                        </span>
+                    </button>
+                    <div class="custom-carousel__inner__navigation__page js--carousel-page-info-selector"></div>
+                    <button class="btn btn-border-black btn-border custom-carousel__inner__navigation__next js--next-slide-btn" aria-label="Doties uz n&#x101;ko&#x161;o slaidu">
+                        <span>
+                            <i class="ic-arrow"></i>
+                        </span>
+                    </button>
+                </div>
+            </section>
+        </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .actuality-box__banner.img-banner .banner__info {
+        background: none;    
+    }
+
+    .actuality-box__banner .banner__info__bottom p {
+        font-size: 1.4rem;
+    }
+
+    .actuality-box__banner .banner__info__bottom h3 {       
+        font-size: 1.57rem;
+    }
+
+    @media (max-width: 992px){
+        .m-mt-4{
+            margin-top:3rem;
+        }
+    }
+</style>
+
+
+    </div>
+
+    
+
+<footer class='footer not-printable' id="page-footer">
+    <div class='container'>
+        <div class='footer__top'>
+            <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <ul class="list list-simple list-nav">
+						        <li class="list__item list__item--header">Noder&#x12B;gi</li>
+                                    <li class="list__item list__item--link">
+							            <a class="d-flex flex-row align-items-center" href="https://latvija.gov.lv/Content/Lapas_karte">
+								            <span>Apskat&#x12B;t lapas karti</span>
+							            </a>
+						            </li>
+                                    <li class="list__item list__item--link">
+							            <a class="d-flex flex-row align-items-center" href="https://latvija.gov.lv/Content/Kontakti">
+								            <span>Kontakti un sazi&#x146;a</span>
+							            </a>
+						            </li>
+                                    <li class="list__item list__item--link">
+							            <a class="d-flex flex-row align-items-center" href="https://latvija.gov.lv/Content/Par_portalu">
+								            <span>Par port&#x101;lu</span>
+							            </a>
+						            </li>
+                                    <li class="list__item list__item--link">
+							            <a class="d-flex flex-row align-items-center" href="https://latvija.gov.lv/Content/Pieklustamiba">
+								            <span>Piek&#x13C;&#x16B;stam&#x12B;bas pazi&#x146;ojums</span>
+							            </a>
+						            </li>
+                                    <li class="list__item list__item--link">
+							            <a class="d-flex flex-row align-items-center" href="https://forms.office.com/e/Xb3ZwQ4WUY">
+								            <span>Atsauksme par Latvija.gov.lv</span>
+							            </a>
+						            </li>
+                                    <li class="list__item list__item--link">
+							            <a class="d-flex flex-row align-items-center" href="https://latvija.gov.lv/Content/Promo/">
+								            <span>Latvija.gov.lv mobil&#x101; lietotne</span>
+							            </a>
+						            </li>
+                                    <li class="list__item  list__item--link">
+                                        <button type="button" class="btn btn-no-border btn-cookie-toggler js--btn-cookie-toggler">Main&#x12B;t s&#x12B;kdat&#x146;u iestat&#x12B;jumus</button>
+                                    </li>
+                            </ul>
+                        </div>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+					    <ul class="list list-simple list-nav list-text">
+						    <li class="list__item list__item--header">KONTAKTI</li>
+                            <li class="list__item">&#xA9; 2025 Valsts digit&#x101;l&#x101;s att&#x12B;st&#x12B;bas a&#x123;ent&#x16B;ra</li>
+                            <li class="list__item">Re&#x123;istr&#x101;cijas numurs: 90001733697</li>
+						    <li class="list__item">t&#x101;lr.: 67502757</li>
+                                <li class="list__item">
+                                    <a href="mailto:portals@vdaa.gov.lv">
+                                        portals@vdaa.gov.lv
+                                    </a>
+                                </li>
+					    </ul>
+				    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <ul class="list list-simple list-nav list-text">
+                                <li class="list__item list__item--header">Seko mums</li>
+                            <li class="list__item">
+                                <ul class="icons-group">
+                                        <li>
+                                            <a href="https://www.youtube.com/channel/UC23A1PjGu9lp__I3VdJrZWA" aria-label="Youtube">
+                                                    <i class="ic-youtube"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.facebook.com/latvija.lv/" aria-label="Facebook">
+                                                    <i class="ic-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/PortalsLV" aria-label="X">
+                                                    <i class="ic-placeholder" style="background-image: url(images/x-black.png);"></i>
+                                            </a>
+                                        </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+
+        <div class='footer__bottom'>
+            <div class="row">
+                    <div class="col-lg-3 col-12">
+                        <ul class="list list-simple list-horizontal">
+                                <li class="list__item">
+                                    <a href="https://www.esfondi.lv/par-es-fondiem/es-fondi-un-citi-finansu-instrumenti/kohezijaspolitika/eiropas-regionalas-attistibas-fonds">
+                                        <img src="images/lv_eraf.png" alt="Nacion&#x101;lais att&#x12B;st&#x12B;bas pl&#x101;ns 2020 un Eiropas Savien&#x12B;bas Eiropas Re&#x123;ion&#x101;l&#x101;s att&#x12B;st&#x12B;bas fonda logo ar tekstu &#x201C;Ieguld&#x12B;jums tav&#x101; n&#x101;kotn&#x113;&#x201D;">
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="https://europa.eu/youreurope/index.htm#lv">
+                                        <img src="images/your_europe.jpg" alt="Logo Tava Eiropa &#x2013; &#x161;&#x12B; t&#x12B;mek&#x13C;vietne ir da&#x13C;a no ES kvalit&#x101;tes t&#x12B;kla">
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="https://www.esfondi.lv/par-es-fondiem/es-fondi-un-citi-finansu-instrumenti/kohezijaspolitika/eiropas-regionalas-attistibas-fonds">
+                                        <img src="images/es_nap2027.png" alt="Eiropas Savien&#x12B;bas un Nacion&#x101;l&#x101; att&#x12B;st&#x12B;bas pl&#x101;na 2027 logo ar tekstu &#x201C;Finans&#x113; Eiropas Savien&#x12B;ba&#x201D;">
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    <div class='fixed-bottom h-100 d-flex flex-column'>
+        <div class='d-flex flex-column align-items-end justify-content-end h-100'>
+            
+
+    <div class="assistant not-printable" style="display: contents">
+        <?xml version="1.0"?><div id="webchat-app-bot"><script>(function(e,t){var n=function(){var e={};BotChat.Intro({options:e},t.getElementById('webchat-app-bot'))},a=function(){var e=t.createElement('script'),a=t.createElement('link');e.src='https://cdn.viss.gov.lv/Assistant/botchat.min.js';a.href='https://cdn.viss.gov.lv/Assistant/botchatProd.css?7';a.rel='stylesheet';e.onload=n;e.charset='utf-8';t.head.appendChild(a);t.head.appendChild(e)};e.addEventListener?e.addEventListener('load',a,!1):e.attachEvent('onload',a)})(window,document);</script></div>
+    </div>
+
+        </div>
+        
+
+
+<script>
+    var cookieConfiguration = {
+        analytics: new DOMParser().parseFromString('&lt;div class=&quot;gtm-wrapper&quot;&gt;&lt;script type=&quot;text/javascript&quot;&gt;(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ &#x27;gtm.start&#x27;:new Date().getTime(), event: &#x27;gtm.js&#x27; }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != &#x27;dataLayer&#x27; ? &#x27;&amp;l=&#x27; &#x2B; l : &#x27;&#x27;; j.async = true; j.src = &#x27;https://www.googletagmanager.com/gtm.js?id=&#x27; &#x2B; i &#x2B; dl; f.parentNode.insertBefore(j, f); })(window, document, &#x27;script&#x27;, &#x27;dataLayer&#x27;, &#x27;GTM-NVHWH9&#x27;);&lt;/script&gt;&lt;/div&gt;', 'text/html').documentElement.textContent,
+        hidden: false
+    };
+</script>
+
+<div class='cookie-wrapper js--cookie-alert hidden' data-component='CookieAlert' data-option-accept-cookies-button-text="Piekrist" data-option-manage-cookies-button-text="P&#x101;rvald&#x12B;t" role='alert'>
+    <div class='cookie-alert'>
+        <div class='container'>
+            <div class='cookie-alert__inner'>
+                <div class='cookie-alert__left'>
+                    <span class='mb-1 d-block font-size-h3 color-white font-weight-medium'>Pazi&#x146;ojums par s&#x12B;kdat&#x146;u izmanto&#x161;anu</span>
+                    <p>Mūsu portālā tiek izmantotas sīkdatnes. Nospiežot pogu “Piekrist visam” Jūs atļaujat to izmantošanu. <a id='cookie-learn-more-link' href='https://latvija.gov.lv/Content/Sikdatnes' target='_blank'>Uzzini vairāk!</a></p>
+                    <div id='manage_group' class="cookie-alert__options js--option-container hidden">
+                                <div class='form-group form--checkbox form-group--disabled'>
+                                    <div class='d-flex w-100'>
+                                        <div class='input-wrapper'>
+                                            <div class="checkbox-wrapper checkbox--checked">
+                                                <input id="_753b3bb0-5e18-45e2-8628-492a626287ae" type="checkbox" name="data" disabled class='form-control' checked>
+                                                <label for="_753b3bb0-5e18-45e2-8628-492a626287ae" class="color-white">Sist&#x113;mas darb&#x12B;bai nepiecie&#x161;am&#x101;s s&#x12B;kdatnes</label>
+                                                <span class="checkmark"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='form-group form--checkbox '>
+                                    <div class='d-flex w-100'>
+                                        <div class='input-wrapper'>
+                                            <div class="checkbox-wrapper ">
+                                                <input id="_0816b005-5176-4c91-910a-7586e63d1ab2" type="checkbox" name="analytics"  class='form-control' >
+                                                <label for="_0816b005-5176-4c91-910a-7586e63d1ab2" class="color-white">Statistikas uzkr&#x101;&#x161;anai nepiecie&#x161;am&#x101;s s&#x12B;kdatnes</label>
+                                                <span class="checkmark"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class='cookie-alert__right d-flex'>
+                    <button class='btn btn-border btn-border-white btn-rounded btn-md js--close-button'>
+                        <span tabindex='-1'>
+                            <span>P&#x101;rvald&#x12B;t</span>
+                        </span>
+                    </button>
+
+                    <button class='ml-2 btn btn-border btn-border-white btn-rounded btn-md js--accept-all-button'>
+                        <span tabindex='-1'>
+                            <span>Piekrist visam</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <script src="js/bundle.js"></script>
+    <script src="js/moment_2.29.4.min.js"></script>
+    <script src="js/rxjs_7.5.7.umd.min.js"></script>
+    <script src=/Home/_content/Lvp.Portal.Controls.Razor/js/DowntimeModal.min.js></script>
+    <script src=/Home/_content/Lvp.Portal.Controls.Razor/js/CookieModal.min.js></script>
+    <script src=/Home/_content/Lvp.Portal.Controls.Razor/js/EmailValidity.min.js></script>
+    <script type="module">
+        import { initializeSearch } from '/Home/_content/Lvp.Portal.Controls.Razor/js/Search.min.js';
+
+        initializeSearch('api/header-search')
+            .catch(error => {
+                console.error('Error initializing search loader:', error);
+            });
+    </script>
+    <script>
+        HTMLSDK.initUnobtrusiveComponents();
+        
+        const lastLoginElement = document.getElementById('last_login');
+        if (lastLoginElement) {
+            let lastLoginValue = lastLoginElement.value;
+            let date = moment(lastLoginValue - 62135596800000);
+            lastLoginElement.outerHTML = date.format('YYYY.MM.DD HH:mm:ss');
+        }
+    </script>
+    <script>
+        const id = "";
+        const cookieName = "lvpkdvsa";
+
+        const listOfCookies = document.cookie.split("; ");
+
+        const cookie = listOfCookies.find(c => {
+            const [name, value] = c.split("=");
+            return name == cookieName;
+        });
+
+        if (cookie) {
+            const [name, value] = cookie.split("=");
+            const list = value ? value.split(":") : [];
+
+            if (!list.includes(id)) {
+                list.push(id);
+            }
+
+            document.cookie = `${cookieName}=${list.join(":")}`;
+        } else {
+            document.cookie = `${ cookieName }=${ id } `;
+        }
+    </script>
+    
+    
+
+</body>
+</html>

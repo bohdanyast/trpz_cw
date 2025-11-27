@@ -1,0 +1,21 @@
+.cookie-wrapper {
+    margin-top: 10px;
+}
+
+#webchat-app-bot {
+    position: relative !important;
+    pointer-events: auto;
+}
+
+.main-page__header h1 {
+    margin-bottom: 0px !important;
+}
+
+@media (max-width: 992px) {
+    #webchat-app-bot {
+        margin: 15px !important;
+    }
+    #webchat-app-bot.webchat-app-bot-intro {
+        margin: 0 !important;
+    } 
+}
